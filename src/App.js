@@ -1,8 +1,15 @@
 import React from 'react';
 
 function App() {
+
+  const GREETING = "Hi, Tom!"
+  const DOM = <input type="text" onChange={() => {console.log("I am clecked.")}} />
+
   return (
-    <h1>Hello, World.</h1>
+    <header>
+      <label htmlFrom="bar">bar</label>
+      {DOM}
+    </header>
   );
 }
 
