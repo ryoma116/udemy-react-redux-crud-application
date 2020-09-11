@@ -1,31 +1,29 @@
 import React from 'react';
 
-// function App() {
-
-//   const GREETING = "Hi, Tom!"
-//   const DOM = <input type="text" onChange={() => {console.log("I am clecked.")}} />
-
-//   return (
-//     <header>
-//       <label htmlFrom="bar">bar</label>
-//       {DOM}
-//     </header>
-//   );
-// }
-
 const App = () => {
+
+  const profiles = [
+    {name:"Taro", age: 10},
+    {name:"Hanako", age: 5},
+    {}
+  ]
+
   return <div>
-      Hi!
-      <Cat />
-      <Cat />
-      <Cat />
-      <Cat />
+    {
+      profiles.map((profile, idx) => {
+        return <User name={profile.name} age={profile.age} key={idx} />
+      })
+    }
     </div>
 }
 
-const Cat = () => {
-  return <div>Meaw!</div>
+const User = (props) => {
+  return <div>Hi, I am {props.name}, and {props.age} year old!</div>
 }
 
+User.defaultProps = {
+  age: 1,
+  name: "NoName"
+}
 
 export default App;
