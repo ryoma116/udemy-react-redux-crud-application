@@ -1,17 +1,13 @@
-import { INCREMENT, DECREMENT } from '../actions'
+import { READ_EVENTS } from '../actions'
 
 const initialState= { value: 0 }
 
 export default (state = initialState, action) => {
     switch (action.type) {
-        case INCREMENT:
-            return { value: state.value + 1 }
+        case READ_EVENTS:
+            return state
 
-        case DECREMENT:
-            return { value: state.value - 1 }
-            
         default:
             return state
     }
 }
-
